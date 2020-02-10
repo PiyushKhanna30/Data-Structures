@@ -23,7 +23,7 @@ void ins(int h[],int n,int value)
     int par,child;
     child=n-1;
     par=(child-1)/2;
-    while(par>0)
+    while(par!=child)
     {
         if (h[par]>value)
         {
