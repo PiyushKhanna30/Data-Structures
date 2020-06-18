@@ -1,5 +1,5 @@
-#include<iostream.h>
-#include<conio.h>
+#include<iostream>
+using namespace std;
 class buble_sort
 {public:
  int temp;
@@ -24,9 +24,7 @@ class buble_sort
   }
  }
 };
-void main()
+int main()
 {
- clrscr();
  buble_sort obj;
- getch();
 }

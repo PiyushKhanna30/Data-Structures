@@ -7,13 +7,7 @@ class heap
 public:
     heap()
     {
-        cout<<"\nEnter number of elements in heap - ";
-        cin>>n;
-        cout<<"\nEnter numbers - ";
-        for(int i=0;i<=n-1;i++)
-        {
-            cin>>h[i];
-        }
+        n=0;
     }
     void swap(int *a,int *b)
     {
@@ -29,8 +23,7 @@ public:
             if (h[parent_index]<h[value_index])
             {
                 swap(&h[value_index],&h[parent_index]);
-                value_index=parent_index;
-                insertVerify(value_index);
+                insertVerify(parent_index);
             }
         }
     }
@@ -46,11 +39,11 @@ public:
         par=index;
         left_ch=(2*par)+1;
         right_ch=(2*par)+2;
-        if (h[left_ch]>h[par] && left_ch<(n-1) )
+        if (h[left_ch]>h[par] && left_ch<=(n-1) )
         {
             par=left_ch;
         }
-        if (h[right_ch]>h[par] && right_ch<(n-1))
+        if (h[right_ch]>h[par] && right_ch<=(n-1))
         {
             par=right_ch;
         }
@@ -79,8 +72,47 @@ public:
 int main()
 {
     heap obj;
-    obj.insert(15);
-    obj.show();
-    obj.delet();
-    obj.show();
+    int x=1;
+    int item,choice;
+    while(x!=0)
+    {
+    cout<<"\n\n---------------";
+    cout<<"\n* * * * * * * * *";
+    cout<<"\n*  1.Insert     *";
+    cout<<"\n*  2.Delete     *";
+    cout<<"\n*  3.Show       *";
+    cout<<"\n*  0.Exit       *";
+    cout<<"\n* * * * * * * * *";
+    cout<<"\n\nEnter choice number - ";
+    cin>>choice;
+    switch(choice)
+    {
+    case(1):
+        {
+            cout<<"\nEnter value - ";
+            cin>>item;
+            obj.insert(item);
+            break;
+        }
+    case(2):
+        {
+            obj.delet();
+            break;
+        }
+    case(3):
+        {
+            obj.show();
+            break;
+        }
+    case(0):
+        {
+            x=0;
+            break;
+        }
+    default:
+        {
+            cout<<"\nInvalid Choice!!!";
+        }
+    }
+    }
 }

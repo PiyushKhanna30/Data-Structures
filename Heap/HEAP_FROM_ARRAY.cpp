@@ -37,7 +37,7 @@ void show(int h[],int n)
 }
 int main()
 {
-    int b[5]={4, 10, 3, 5, 1};
+    int b[5]={4, 5, 3, 10, 1};
     int n=5;
     int nln= ((n-1)-1)/2;           //non_leaf_nodes
     for (int i=nln;i>=0;i--)

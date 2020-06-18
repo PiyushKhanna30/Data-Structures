@@ -6,7 +6,7 @@ int findVertex(int *weight,bool* visited,int n)
     int minVertex=-1;
     for(int i=0;i<n;i++)
     {
-        if(visited[i]==false && (minVertex==-1||weight[i-1]<weight[minVertex]))
+        if(visited[i]==false && (minVertex==-1||weight[i]<weight[minVertex]))
         {
             minVertex=i;
         }

@@ -106,11 +106,10 @@ void i_to_p(string s)
         }
         else
         {
-            while(obj.top()!=')' && prec(s[i])<prec(obj.top()))
+            while(obj.top()!='(' && prec(s[i])<=prec(obj.top()))
             {
                 res=res+obj.top();
                 obj.pop();
-                ///cout<<"hjdfj";
             }
             obj.push(s[i]);
             cout<<"\n"<<res;
@@ -120,6 +119,6 @@ void i_to_p(string s)
 }
 int main()
 {
-    string exp = "a+(b*c-(d/e^f)*g)*h";
+    string exp = "a+b*(c^d-e)^(f+g*h)-i";
     i_to_p(exp);
 }
